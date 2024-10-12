@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "Lab2\Lab2.csproj", "{6ECE7583-BAB8-42EF-ADDD-911FAC34FFD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "Lab2\Lab2\Lab2.csproj", "{6ECE7583-BAB8-42EF-ADDD-911FAC34FFD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.Tests", "Lab2.Tests\Lab2.Tests.csproj", "{591EF25D-2565-4FCA-A1A2-548BC254FB7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2.Tests", "Lab2\Lab2.Tests\Lab2.Tests.csproj", "{591EF25D-2565-4FCA-A1A2-548BC254FB7F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6ECE7583-BAB8-42EF-ADDD-911FAC34FFD5} = {6ECE7583-BAB8-42EF-ADDD-911FAC34FFD5}
 	EndProjectSection
