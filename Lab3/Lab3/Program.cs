@@ -5,7 +5,7 @@ using System.IO;
 
 
 // Read input from the file "input.txt"
-var input = File.ReadAllLines("input.txt");
+var input = File.ReadAllLines(@"Lab3//input.txt");
 
 // Extract n and k from the first line
 var firstLine = input[0].Split();
@@ -42,12 +42,16 @@ for (int i = n + 1; i < n + 1 + k; i++)
 // Get the order of the tour
 var result = routeManager.GetTourOrder();
 
+using var writer = new StreamWriter(@"Lab3//OUTPUT.TXT");
+
 // Output the result
 if (result == null)
 {
     Console.WriteLine(-1);
+    writer.WriteLine(-1);
 }
 else
 {
     Console.WriteLine(string.Join(" ", result));
+    writer.WriteLine(string.Join(" ", result));
 }
