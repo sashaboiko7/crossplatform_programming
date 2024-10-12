@@ -1,0 +1,22 @@
+<Project>
+  <PropertyGroup>
+    <SolutionName Condition="'$(Solution)' == 'Lab1'">Lab1</SolutionName>
+    <SolutionName Condition="'$(Solution)' == 'Lab2'">Lab2</SolutionName>
+    <SolutionName Condition="'$(Solution)' == 'Lab3'">Lab3</SolutionName>
+  </PropertyGroup>
+
+  <Target Name="Build">
+    <Message Text="Building solution $(SolutionName)" Importance="high" />
+    <Exec Command="dotnet build $(SolutionName)/$(SolutionName).sln" />
+  </Target>
+
+  <Target Name="Run">
+    <Message Text="Running project $(SolutionName)" Importance="high" />
+    <Exec Command="dotnet run --project $(SolutionName)/$(SolutionName)/$(SolutionName).csproj" />
+  </Target>
+
+  <Target Name="Test">
+    <Message Text="Running tests for project $(SolutionName)" Importance="high" />
+    <Exec Command="dotnet test $(SolutionName)/$(SolutionName).Tests/$(SolutionName).Tests.csproj --logger:console;verbosity=detailed" />
+  </Target>
+</Project>
