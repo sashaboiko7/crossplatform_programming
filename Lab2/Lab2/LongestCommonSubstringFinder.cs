@@ -6,6 +6,12 @@ namespace Lab2
     {
         public static (string alpha, string beta) FindLongestCommonSubstring(string xi, string eta)
         {
+            if (string.IsNullOrEmpty(xi) || string.IsNullOrEmpty(eta))
+            {
+                Console.WriteLine("Invalid input: Both strings must be non-null and non-empty.");
+                return (string.Empty, string.Empty);
+            }
+
             int m = xi.Length;
             int n = eta.Length;
 

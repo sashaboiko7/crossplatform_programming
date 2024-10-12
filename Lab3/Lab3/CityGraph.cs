@@ -13,6 +13,12 @@ namespace Lab3
 
         public CityGraph(int numberOfCities)
         {
+            if (numberOfCities <= 0)
+            {
+                Console.WriteLine("The number of cities must be greater than zero.");
+                return;
+            }
+
             _adjacencyList = new List<int>[numberOfCities + 1];
             _inDegrees = new int[numberOfCities + 1];
 
@@ -24,6 +30,24 @@ namespace Lab3
 
         public void AddEdge(int from, int to)
         {
+            if (from <= 0 || from >= _adjacencyList.Length)
+            {
+                Console.WriteLine($"City {from} is out of bounds.");
+                return;
+            }
+
+            if (to <= 0 || to >= _adjacencyList.Length)
+            {
+                Console.WriteLine($"City {to} is out of bounds.");
+                return;
+            }
+
+            if (from == to)
+            {
+                Console.WriteLine("Self-loops are not allowed.");
+                return;
+            }
+
             _adjacencyList[from].Add(to);
             _inDegrees[to]++;
 
@@ -32,6 +56,12 @@ namespace Lab3
 
         public List<int> TopologicalSort()
         {
+            if (_adjacencyList.Length == 0)
+            {
+                Console.WriteLine("Graph is empty, topological sort cannot be performed.");
+                return null;
+            }
+
             var result = new List<int>();
             var queue = new Queue<int>();
 

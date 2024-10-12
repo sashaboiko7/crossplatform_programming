@@ -27,6 +27,12 @@ namespace Lab1
 
         public static string Solve(int a, int b, int c)
         {
+            if (a < 0 || b < 0 || c < 0)
+                return "Invalid input: a, b, and c must be non-negative integers.";
+
+            if (a > int.MaxValue || b > int.MaxValue || c > int.MaxValue)
+                return "Invalid input: a, b, or c is too large.";
+
             if (a == 0 && b == c) return $"YES\n0 {b}";
             if (b == 0 && a == c) return $"YES\n{a} 0";
 
